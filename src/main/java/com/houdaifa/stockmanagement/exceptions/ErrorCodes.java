@@ -26,7 +26,9 @@ public enum ErrorCodes {
     UTILISATEUR_NOT_FOUND(12000),
     UTILISATEUR_NOT_VALID(12001),
     VENTE_NOT_FOUND(13000),
-    VENTE_NOT_VALID(13001)
+    VENTE_NOT_VALID(13001),
+    ROLES_NOT_FOUND(14000),
+    ROLES_NOT_VALID(14001)
     ;
     private int code;
     ErrorCodes(int code){
