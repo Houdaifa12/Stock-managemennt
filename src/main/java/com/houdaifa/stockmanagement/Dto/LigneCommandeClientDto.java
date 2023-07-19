@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 @Data
 public class LigneCommandeClientDto {
     private Integer id;
+    private String Code;
     private ArticleDto article;
     private CommandeClientDto commandeClient;
     private BigDecimal quantite;
