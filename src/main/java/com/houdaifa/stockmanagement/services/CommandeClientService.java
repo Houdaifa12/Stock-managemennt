@@ -11,6 +11,7 @@ public interface CommandeClientService {
     void deleteBydId(Integer id);
 
     CommandeClientDto save(CommandeClientDto commandeClientDto);
+    CommandeClientDto findByCode(String code);
 
 
 }

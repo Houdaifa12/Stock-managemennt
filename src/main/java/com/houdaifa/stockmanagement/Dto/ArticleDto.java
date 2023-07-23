@@ -20,6 +20,7 @@ public class ArticleDto {
     private BigDecimal prixUnitaireTtc;
     private String photo;
     private CategoryDto category;
+    private Integer quantity;
     public static ArticleDto fromEntity(Article article) {
         if (article == null) {
             return null;
@@ -27,6 +28,7 @@ public class ArticleDto {
             ArticleDto articleDto=new ArticleDto();
             articleDto.setCodeArticle(article.getCodeArticle());
             articleDto.setPhoto(article.getPhoto());
+            articleDto.setQuantity(articleDto.getQuantity());
             articleDto.setDesignation(article.getDesignation());
             articleDto.setPrixUnitaireTtc(article.getPrixUnitaireTtc());
             articleDto.setPrixUnitaireHt(article.getPrixUnitaireHt());
@@ -41,6 +43,7 @@ public class ArticleDto {
             return null;
         } else {
             Article article=new Article();
+            article.setQuantity(articleDto.getQuantity());
             article.setCodeArticle(articleDto.getCodeArticle());
             article.setPhoto(articleDto.getPhoto());
             article.setDesignation(articleDto.getDesignation());

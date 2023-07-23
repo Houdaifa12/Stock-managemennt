@@ -21,7 +21,7 @@ public class LigneCommandeClient extends AbstractEntity{
     private CommandeClient commandeClient;
 
     @Column(name="quantite")
-    private BigDecimal quantite;
+    private Integer quantity;
 
     @Column(name="prixUnitaire")
     private BigDecimal prixUnitaire;

@@ -15,11 +15,15 @@ public class ArticleValidator {
             errors.add("Please enter The VAT rate of the article");
             errors.add("Please enter The unit Htc Price of the article");
             errors.add("Please enter The unit Price Ttc of the article");
+            errors.add("please enter the quantity of the product");
             return errors;
         }
         if(!StringUtils.hasLength(articleDto.getCodeArticle()))
         {
             errors.add("Please enter The code of the article");
+        }
+        if(articleDto.getQuantity()==null){
+            errors.add("please enter the quantity of the product");
         }
         if(!StringUtils.hasLength(articleDto.getPhoto()))
         {
