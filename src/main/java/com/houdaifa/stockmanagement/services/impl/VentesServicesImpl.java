@@ -76,4 +76,15 @@ public class VentesServicesImpl implements VentesService {
     public List<VentesDto> findAll() {
         return ventesRepository.findAll().stream().map(VentesDto::fromEntity).collect(Collectors.toList());
     }
+
+    @Override
+    public VentesDto findPurchaseByCode(String code) {
+        if(code==null){
+            log.error("the given id is null");
+        }
+        Optional<Ventes>ventes=ventesRepository.findByCode(code);
+        return VentesDto.fromEntity(Optional.of(ventes.get()).orElseThrow(()->
+                new EntityNotFoundException("the purchase with the code:"+code+"is not found", ErrorCodes.VENTE_NOT_FOUND)
+        ));
+    }
 }

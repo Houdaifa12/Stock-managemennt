@@ -10,4 +10,5 @@ public interface VentesService {
     VentesDto findById(Integer id);
     void deleteById(Integer id);
     List<VentesDto> findAll();
+    VentesDto findPurchaseByCode(String code);
 }
