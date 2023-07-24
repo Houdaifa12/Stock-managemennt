@@ -1,5 +1,6 @@
 package com.houdaifa.stockmanagement.Dto;
 
+import com.houdaifa.stockmanagement.model.LigneVente;
 import com.houdaifa.stockmanagement.model.Ventes;
 import jdk.jfr.Category;
 import lombok.AllArgsConstructor;
@@ -8,6 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,6 +20,7 @@ public class VentesDto {
     private String code;
     private Instant dateVente;
     private String commentaire;
+    public List<LigneVentesDto>ligneVenteDtos;
     public static VentesDto fromEntity(Ventes ventes){
         if(ventes==null){
             return null;
@@ -30,7 +34,7 @@ public class VentesDto {
             return ventesDto;
         }
     }
-    public static Ventes fromEntity(VentesDto ventesDto){
+    public static Ventes toEntity(VentesDto ventesDto){
         if(ventesDto==null){
             return null;
         }

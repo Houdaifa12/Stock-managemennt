@@ -2,7 +2,6 @@ package com.houdaifa.stockmanagement.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,11 +16,16 @@ public class LigneVente extends AbstractEntity{
 
     @ManyToOne
     @JoinColumn(name = "idvente")
-    private Ventes vente;
+    private Ventes ventes;
 
     @Column(name="quantite")
     private BigDecimal quantite;
 
     @Column(name="prixunitaire")
     private BigDecimal prixUnitaire;
+
+    @ManyToOne
+    @JoinColumn(name = "idArticle")
+    private Article article;
+
 }
