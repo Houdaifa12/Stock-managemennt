@@ -6,10 +6,14 @@ import com.houdaifa.stockmanagement.Dto.ArticleDto;
 import com.houdaifa.stockmanagement.services.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
-@Controller
+import static com.houdaifa.stockmanagement.utils.Constante.APP_ROOT;
+@RestController
+@RequestMapping(value=APP_ROOT+"/articles")
 public class ArticleController implements ArticleApi {
     @Autowired
     private ArticleService articleService;
